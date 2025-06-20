@@ -114,11 +114,11 @@ const Projects = () => {
           ))}
         </div>
         
-        <div className="text-center mt-12">
+        {/* <div className="text-center mt-12">
           <a href="#projects" className="btn-primary">
             View All Projects
           </a>
-        </div>
+        </div> */}
       </div>
     </section>
   );

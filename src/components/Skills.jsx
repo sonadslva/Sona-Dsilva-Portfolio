@@ -61,9 +61,21 @@ const Skills = () => {
         <div className="mt-16 pt-10 border-t border-gray-200 dark:border-gray-700">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">Other Skills</h3>
           <div className="flex flex-wrap justify-center gap-4">
-            {["Responsive Design", "UI/UX Design", "Progressive Web Apps", "Performance Optimization", 
-              "Accessibility (WCAG)", "SEO Basics", "Cross-Browser Compatibility", "Mobile-First Design",
-              "CSS Animations", "State Management", "Git Workflow", "CI/CD"].map((skill, index) => (
+            {[
+  "React.js Development", 
+  "HTML5 & CSS3", 
+  "JavaScript (ES6+)", 
+  "Firebase Integration", 
+  "Django Framework", 
+  "Python Programming", 
+  "SQL Databases", 
+  "Responsive Web Design",
+  "Frontend Development",
+  "Backend Development",
+  "Full Stack Solutions",  
+  "Problem Solving",
+  "Team Collaboration"
+].map((skill, index) => (
               <span 
                 key={index} 
                 className="px-4 py-2 bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 rounded-full font-medium text-sm"

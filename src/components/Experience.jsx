@@ -13,7 +13,6 @@ const Experience = () => {
         "Designed and implemented responsive UI components using Tailwind CSS.",
         "Optimized application performance and ensured cross-browser compatibility.",
         "Collaborated with backend developers to integrate APIs and improve functionality.",
-       
         "Conducted code reviews and implemented best coding practices.",
         "Managed project timelines and delivered high-quality applications on schedule.",
       ],
@@ -26,72 +25,75 @@ const Experience = () => {
         "Developed and maintained full-stack web applications using Django, React, and RESTful APIs. Built scalable backend solutions, optimized database performance, and implemented secure authentication systems.",
       responsibilities: [
         "Designed and developed RESTful APIs using Django and Django REST Framework.",
-        
         "Developed dynamic frontend components using React and integrated them with Django.",
         "Optimized database queries and ensured efficient data management using PostgreSQL.",
-        
         "Collaborated with cross-functional teams to enhance application performance and security.",
       ],
     },
-   
   ];
 
-  // Generate a random delay for each element to create natural swaying effect
   const [delays, setDelays] = useState([]);
   
   useEffect(() => {
-    // Create random delays for each element
     const newDelays = experiences.map(() => Math.random() * 2);
     setDelays(newDelays);
   }, []);
 
   return (
-    <section id="experience">
-    <div className="bbg-gray-50 dark:bg-gray-800 f p-8 min-h-screen">
+    <section id="experience" className="bg-gray-50 dark:bg-gray-800 py-12 md:py-16 lg:py-20 px-4 sm:px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 text-white ">
+        <h2 className="text-3xl sm:text-4xl font-bold text-center mb-8 md:mb-12 text-gray-900 dark:text-white">
           Work Experience
         </h2>
         
-        <div className="relative pt-10">
-          {/* Timeline Line */}
-          <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-blue-400 animate-pulse"></div>
+        <div className="relative pt-8 md:pt-10">
+          {/* Timeline Line - Full width on mobile, centered on desktop */}
+          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-1 bg-blue-400 dark:bg-blue-600 animate-pulse md:transform md:-translate-x-1/2"></div>
           
-          {/* Experience Items */}
-          <div className="space-y-16">
+          <div className="space-y-12 md:space-y-16">
             {experiences.map((exp, index) => {
               const isLeft = index % 2 === 0;
               
               return (
                 <div 
                   key={index} 
-                  className={`relative flex ${isLeft ? 'justify-end' : 'justify-start'}`}
+                  className={`relative flex ${isLeft ? 'justify-start md:justify-end' : 'justify-start'}`}
                 >
                   <div 
-                    className={`w-5/12 ${isLeft ? 'mr-8' : 'ml-8'}`}
+                    className={`w-full md:w-5/12 ${isLeft ? 'md:mr-8' : 'md:ml-8'}`}
                     style={{
                       animation: `sway${isLeft ? 'Left' : 'Right'} ${3 + Math.random()}s ease-in-out infinite`,
                       animationDelay: `${delays[index]}s`,
                     }}
                   >
                     {/* Timeline Dot */}
-                    <div className="absolute left-1/2 top-0 w-6 h-6 rounded-full bg-blue-500 shadow-md transform -translate-x-1/2 hover:scale-110 transition-all" 
+                    <div 
+                      className="absolute left-0 md:left-1/2 top-0 w-6 h-6 rounded-full bg-blue-500 dark:bg-blue-400 shadow-md transform -translate-x-1/2 hover:scale-110 transition-all"
                       style={{
                         animation: `pulse ${2 + Math.random()}s ease-in-out infinite`,
                         animationDelay: `${delays[index] * 0.5}s`,
-                      }}></div>
+                      }}
+                    ></div>
                     
                     {/* Content */}
-                    <div className={`bg-gray-50 w-[500px]  dark:bg-gray-800 p-6 rounded-2xl shadow-lg hover:shadow-xl transition-all ${isLeft ? 'border-2' : 'border-2'} border-blue-500`}>
-                      <div className="flex justify-between items-start mb-2">
-                        <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">{exp.title}</h3>
-                        <span className="text-sm paragraph italic">{exp.period}</span>
+                    <div className={`
+                      bg-white dark:bg-gray-700 p-6 rounded-xl shadow-lg hover:shadow-xl transition-all 
+                      border-l-4 md:border-l-0 border-blue-500 ml-8 md:ml-0
+                      ${isLeft ? 'md:border-r-2' : 'md:border-l-2'} md:border-blue-500
+                    `}>
+                      <div className="flex flex-col sm:flex-row sm:justify-between items-start mb-3">
+                        <div>
+                          <h3 className="text-xl font-bold text-blue-600 dark:text-blue-400">{exp.title}</h3>
+                          <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-200">{exp.company}</h4>
+                        </div>
+                        <span className="text-sm text-gray-600 dark:text-gray-300 mt-1 sm:mt-0">{exp.period}</span>
                       </div>
-                      <h4 className="text-lg font-semibold paragraph mb-3">{exp.company}</h4>
-                      <p className="paragraph mb-4">{exp.description}</p>
-                      <ul className="list-disc pl-5 paragraph space-y-1">
+                      <p className="text-gray-600 dark:text-gray-300 mb-4">{exp.description}</p>
+                      <ul className="list-disc pl-5 space-y-1 text-gray-700 dark:text-gray-300">
                         {exp.responsibilities.map((resp, respIndex) => (
-                          <li key={respIndex} className="hover:text-blue-600 transition-colors">{resp}</li>
+                          <li key={respIndex} className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                            {resp}
+                          </li>
                         ))}
                       </ul>
                     </div>
@@ -125,7 +127,6 @@ const Experience = () => {
           50% { transform: translate(-50%, 0) scale(1.2); }
         }
       `}</style>
-    </div>
     </section>
   );
 };

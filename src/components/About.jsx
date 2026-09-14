@@ -118,8 +118,8 @@ const About = () => {
                 </div>
               </div>
 
-              <a 
-                href="Sona DSilva.pdf" 
+              <a
+                href="/Sona_DSilva_Resume.pdf"
                 className="btn-primary inline-block px-6 py-2 sm:px-8 sm:py-3 text-sm sm:text-base"
                 download
               >

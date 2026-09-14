@@ -13,7 +13,7 @@ const Projects = () => {
       image: abhaya,
       description: "I created a responsive and user-friendly website for an Ayurvedic hospital, enabling patients to explore treatments, book appointments, and access wellness resources. Built with React.js and Django, it ensures a seamless and efficient user experience.",
       technologies: ["React", "Tailwind CSS"],
-      link: "https://www.abhayaayur.com"
+      link: "https://abhayaayurvedic.onrender.com"
     },
     {
       title: "IMC BUSSINESS SOLUTIONS",
@@ -45,7 +45,7 @@ const Projects = () => {
       image: chinju,
       description: "An e-commerce platform built for Chinju Store to showcase and sell grocery products, offering a user-friendly shopping experience with modern design and smooth navigation.",
       technologies: ["React", "Tailwind CSS"],
-      link: "https://chinjustore.in"
+      link: "https://chinjustore.onrender.com"
     },
     {
       title: "AD FITNESS",

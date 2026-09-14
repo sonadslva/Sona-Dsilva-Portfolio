@@ -55,7 +55,7 @@ const Hero = () => {
                 ref={textRef} 
                 className="text-xl sm:text-2xl md:text-3xl text-gray-700 dark:text-gray-300 font-medium"
               >
-                Frontend Developer
+                Full Stack Developer
               </span>
             </div>
             
